@@ -1,0 +1,22 @@
+name = Zurb Foundation
+description = Drupal implemenation of the framework by <a href="http://ishmaelsanchez.com">Ishmael Sanchez</a>
+screenshot = images/screenshot.png
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = stylesheets/foundation.css
+stylesheets[all][] = stylesheets/app.css
+stylesheets[all][] = stylesheets/drupal.css
+
+; Theme Default jQuery scripts.
+scripts[] = javascripts/app.js
+
+regions[help]            = Help
+regions[highlighted]     = Highlighted
+regions[content]         = Content
+regions[sidebar_first]   = Left Sidebar
+regions[sidebar_second]  = Right Sidebar
+regions[footer_first]    = Footer first
+regions[footer_middle]   = Footer middle
+regions[footer_last]     = Footer last
+regions[footer]          = Page bottom

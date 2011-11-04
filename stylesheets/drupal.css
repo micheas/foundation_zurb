@@ -1,0 +1,13 @@
+/* This is for some sane Drupal base styles */
+
+body {overflow-y:hidden;}
+
+#site-name {
+  display:inline-block;
+  font-size:3em;
+  font-weight:normal;
+  line-height:1.25;
+  margin:0;
+}
+
+.logo {vertical-align: bottom;}
