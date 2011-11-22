@@ -36,7 +36,7 @@
   <div class="container">
     <div class="row">
       <div id="main" class="<?php print $main_grid; ?> columns">
-        <?php if ($page['highlighted']): ?>
+        <?php if (!empty($page['highlighted'])): ?>
           <div id="mission">
             <?php print render($page['highlighted']); ?>
           </div>
@@ -61,12 +61,12 @@
         <?php endif; ?>
         <?php print render($page['content']); ?>
       </div>
-      <?php if ($page['sidebar_first']): ?>
+      <?php if (!empty($page['sidebar_first'])): ?>
         <div id="sidebar-first" class="<?php print $sidebar_first_grid; ?> columns sidebar ">
           <?php print render($page['sidebar_first']); ?>
         </div>
       <?php endif; ?>
-      <?php if ($page['sidebar_second']): ?>
+      <?php if (!empty($page['sidebar_second'])): ?>
         <div id="sidebar-second" class="three columns sidebar">
           <?php print render($page['sidebar_second']); ?>
         </div>
@@ -75,17 +75,17 @@
   </div>
   <hr />
   <footer class="row">
-    <?php if ($page['footer_first']): ?>
+    <?php if (!empty($page['footer_first'])): ?>
       <div id="footer-first" class="five columns">
         <?php print render($page['footer_first']); ?>
       </div>
     <?php endif; ?>
-    <?php if ($page['footer_middle']): ?>
+    <?php if (!empty($page['footer_middle'])): ?>
       <div id="footer-middle" class="three columns">
         <?php print render($page['footer_middle']); ?>
       </div>
     <?php endif; ?>
-    <?php if ($page['footer_last']): ?>
+    <?php if (!empty($page['footer_last'])): ?>
       <div id="footer-last" class="four columns">
         <?php print render($page['footer_last']); ?>
       </div>
