@@ -3,6 +3,7 @@ description = a custom theme based on the foundation framework from Zurb
 screenshot = images/screenshot.png
 core = 7.x
 engine = phptemplate
+base theme = foundation_zurb
 
 ; An empty CSS file ready to be used
 stylesheets[all][] = styles/custom.css

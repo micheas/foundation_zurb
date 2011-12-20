@@ -1,6 +1,6 @@
 /* This is for some sane Drupal base styles */
 
-body {overflow-y:hidden;}
+body {overflow-x:hidden;}
 
 #site-name {
   display:inline-block;
@@ -11,3 +11,42 @@ body {overflow-y:hidden;}
 }
 
 .logo {vertical-align: bottom;}
+.hide-on-desktops #main-menu li {
+  display: block;
+  margin: 0;
+  padding:0;
+  text-transform: uppercase;
+}
+
+.hide-on-desktops #main-menu a {
+  background-color: #0192dd;
+  border-bottom: 1px solid #999;
+  display:block;
+  color:#fff;
+  padding:5px 15px;
+}
+
+/*Header*/
+#mobile-header {
+	color: #fff;
+	-khtml-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.15);
+	-moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.15);
+	-o-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.15);
+	-webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.15);
+	box-shadow: inset 0px 1px 0px rgba(255,255,255,0.15);
+	background-color: #242424;
+	border-top: 1px solid ;
+	border-color: #1b1b1b #161616 #101010;
+	background: -moz-linear-gradient(top, #2e2e2e, #1a1a1a);
+	background: -ms-linear-gradient(top, #2e2e2e, #1a1a1a);
+	background: -o-linear-gradient(top, #2e2e2e, #1a1a1a);
+	background: -webkit-gradient(linear, left top, left bottom, from(#2e2e2e), to(#1a1a1a));
+	background: -webkit-linear-gradient(top, #2e2e2e, #1a1a1a);
+	background: linear-gradient(top, #2e2e2e, #1a1a1a);
+	}
+
+#mobile-header .button {
+  display: inline-block;
+}
+
+.hide-on-desktops #main-menu a:hover		{ background-color: #333; 	}
