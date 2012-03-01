@@ -1,5 +1,5 @@
-name = The custom name of your theme CHANGE THIS in the .info file
-description = a custom theme based on the foundation framework from Zurb
+name = Custom name of theme CHANGE THIS in the .info file
+description = Custom sub theme, inherits from the Foundation Zurb theme
 screenshot = images/screenshot.png
 core = 7.x
 engine = phptemplate
