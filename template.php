@@ -156,25 +156,13 @@ function foundation_zurb_preprocess_page(&$variables) {
  *   An array of variables to pass to the theme template.
  */
 function foundation_zurb_preprocess_node(&$variables) {
-  $variables['date'] = format_date($variables['created'], 'custom', 'M j, Y');
-  $variables['submitted'] = t('posted by !username on !datetime', array('!username' => $variables['name'], '!datetime' => $variables['date']));
-
-  // Add an unpublished class
-  if ($variables['status'] == TRUE) {
-    $variables['classes_array'][] = t('published');
-  } else {
-    $variables['classes_array'][] = t('unpublished');
-  }
-
-  $variables['classes_array'][] = 'clearfix';
-		$variables['title_attributes_array']['class'][] = 'node-title';
+  $variables['title_attributes_array']['class'][] = 'node-title';
 }
 
 /**
  * Override or insert variables into the field template.
  */
 function foundation_zurb_preprocess_field(&$variables) {
-  $variables['classes_array'][] = 'clearfix';
   $variables['title_attributes_array']['class'][] = 'field-label';
   $variables['content_attributes_array']['class'][] = 'field-items';
 
