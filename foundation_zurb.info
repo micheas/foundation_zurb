@@ -1,16 +1,39 @@
 name = Zurb Foundation
 description = Drupal implemenation of the framework by <a href="http://ishmaelsanchez.com">Ishmael Sanchez</a>
-screenshot = images/screenshot.png
 core = 7.x
 engine = phptemplate
 
-stylesheets[all][] = stylesheets/foundation.css
-stylesheets[all][] = stylesheets/app.css
-stylesheets[all][] = stylesheets/drupal.css
+; Image appears on admin/appearance
+screenshot = images/screenshot.png
 
-; Theme Default jQuery scripts.
-scripts[] = javascripts/app.js
+; Foundation framework stylesheets 
+stylesheets[all][] = framework/buttons.css
+stylesheets[all][] = framework/forms.css
+stylesheets[all][] = framework/foudation.css
+stylesheets[all][] = framework/globals.css
+stylesheets[all][] = framework/grid.css
+stylesheets[all][] = framework/ie.css
+stylesheets[all][] = framework/mobile.css
+stylesheets[all][] = framework/navbar.css
+stylesheets[all][] = framework/normalize.css
+stylesheets[all][] = framework/offcanvas.css
+stylesheets[all][] = framework/orbit.css
+stylesheets[all][] = framework/reveal.css
+stylesheets[all][] = framework/tabs.css
+stylesheets[all][] = framework/typography.css
+stylesheets[all][] = framework/ui.css
 
+; Drupal overrides and site specific CSS
+stylesheets[all][] = css/drupal.css
+stylesheets[all][] = css/custom.css
+
+; Default theme scripts.
+scripts[] = js/modernizr.foundation.js
+scripts[] = js/app.js
+
+; Regions are output in the page.tpl.php
+regions[header] = Header
+regions[navigation] = Navigation
 regions[help]            = Help
 regions[highlighted]     = Highlighted
 regions[content]         = Content
@@ -20,6 +43,17 @@ regions[footer_first]    = Footer first
 regions[footer_middle]   = Footer middle
 regions[footer_last]     = Footer last
 regions[footer]          = Page bottom
+
 ; Hidden regions
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
+
+; Possible theme settings
+; settings[foundation_zurb_force_ie] = 1
+; settings[foundation_zurb_html5shiv] = 1
+; settings[foundation_zurb_ie_comments] = 0
+; settings[foundation_zurb_prompt_cf] = 'IE 7'
+
+; settings[foundation_zurb_font] = ''
+; settings[foundation_zurb_font_fallback] = 'sans-serif'
+; settings[foundation_zurb_font_selectors] = 'body'
