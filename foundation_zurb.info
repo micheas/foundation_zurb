@@ -29,7 +29,13 @@ stylesheets[all][] = css/custom.css
 
 ; Default theme scripts.
 scripts[] = js/modernizr.foundation.js
+scripts[] = js/jquery.reveal.js
+scripts[] = js/jquery.orbit-1.4.0.js
+scripts[] = js/jquery.customforms.js
+scripts[] = js/jquery.placeholder.min.js
+scripts[] = js/jquery.tooltips.js
 scripts[] = js/app.js
+scripts[] = js/jquery.offcanvas.js
 
 ; Regions are output in the page.tpl.php
 regions[header] = Header
