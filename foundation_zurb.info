@@ -7,21 +7,21 @@ engine = phptemplate
 screenshot = images/screenshot.png
 
 ; Foundation framework stylesheets 
-stylesheets[all][] = framework/buttons.css
-stylesheets[all][] = framework/forms.css
-stylesheets[all][] = framework/foudation.css
-stylesheets[all][] = framework/globals.css
-stylesheets[all][] = framework/grid.css
-stylesheets[all][] = framework/ie.css
-stylesheets[all][] = framework/mobile.css
-stylesheets[all][] = framework/navbar.css
-stylesheets[all][] = framework/normalize.css
-stylesheets[all][] = framework/offcanvas.css
-stylesheets[all][] = framework/orbit.css
-stylesheets[all][] = framework/reveal.css
-stylesheets[all][] = framework/tabs.css
-stylesheets[all][] = framework/typography.css
-stylesheets[all][] = framework/ui.css
+stylesheets[all][] = css/framework/buttons.css
+stylesheets[all][] = css/framework/forms.css
+stylesheets[all][] = css/framework/foudation.css
+stylesheets[all][] = css/framework/globals.css
+stylesheets[all][] = css/framework/grid.css
+stylesheets[all][] = css/framework/ie.css
+stylesheets[all][] = css/framework/mobile.css
+stylesheets[all][] = css/framework/navbar.css
+stylesheets[all][] = css/framework/normalize.css
+stylesheets[all][] = css/framework/offcanvas.css
+stylesheets[all][] = css/framework/orbit.css
+stylesheets[all][] = css/framework/reveal.css
+stylesheets[all][] = css/framework/tabs.css
+stylesheets[all][] = css/framework/typography.css
+stylesheets[all][] = css/framework/ui.css
 
 ; Drupal overrides and site specific CSS
 stylesheets[all][] = css/drupal.css
