@@ -92,7 +92,6 @@
       <?php print $submitted; ?>
     </div>
   <?php endif; ?>
-  <div class="content"<?php print $content_attributes; ?>>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
@@ -100,7 +99,6 @@
       hide($content['field_tags']);
       print render($content);
     ?>
-  </div>
   <div class="terms-links">
     <?php if (($content['field_tags']) && !$is_front): ?>
       <div class="tags">

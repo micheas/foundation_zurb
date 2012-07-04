@@ -48,4 +48,28 @@
 }
 
 /* Base theme styling */
-#top-bar {background-color:#F5F5F5;}
+.top-bar, .skip-link {
+  background: none repeat scroll 0 0 #333;
+}
+
+.top-bar {
+  border-bottom:1px solid #000;
+}
+
+.top-bar a {
+	-moz-transition: background-color 0.2s linear 0s;
+    font-family: "ProximaNovaBold","Helvetica Neue","Helvetica",Arial,sans-serif;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+}
+
+#main-menu a {
+	border-left: 1px solid #555;
+}
+
+.bottom-bar {
+  background:no-repeat scroll center top #F5F5F5;
+  border-top: 1px solid #ddd;
+  color: #555;
+  padding: 15px 0;
+}
