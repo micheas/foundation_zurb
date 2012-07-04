@@ -6,26 +6,11 @@ engine = phptemplate
 ; Image appears on admin/appearance
 screenshot = images/screenshot.png
 
-; Foundation framework stylesheets 
-stylesheets[all][] = css/framework/buttons.css
-stylesheets[all][] = css/framework/forms.css
-stylesheets[all][] = css/framework/foudation.css
-stylesheets[all][] = css/framework/globals.css
-stylesheets[all][] = css/framework/grid.css
-stylesheets[all][] = css/framework/ie.css
-stylesheets[all][] = css/framework/mobile.css
-stylesheets[all][] = css/framework/navbar.css
-stylesheets[all][] = css/framework/normalize.css
-stylesheets[all][] = css/framework/offcanvas.css
-stylesheets[all][] = css/framework/orbit.css
-stylesheets[all][] = css/framework/reveal.css
-stylesheets[all][] = css/framework/tabs.css
-stylesheets[all][] = css/framework/typography.css
-stylesheets[all][] = css/framework/ui.css
+; Foundation framework stylesheets
+stylesheets[all][] = css/framework/foundation.css 
 
 ; Drupal overrides and site specific CSS
 stylesheets[all][] = css/drupal.css
-stylesheets[all][] = css/custom.css
 
 ; Default theme scripts.
 scripts[] = js/modernizr.foundation.js
@@ -56,10 +41,19 @@ regions[page_bottom] = Page bottom
 
 ; Possible theme settings
 ; settings[foundation_zurb_force_ie] = 1
-; settings[foundation_zurb_html5shiv] = 1
 ; settings[foundation_zurb_ie_comments] = 0
 ; settings[foundation_zurb_prompt_cf] = 'IE 7'
 
 ; settings[foundation_zurb_font] = ''
 ; settings[foundation_zurb_font_fallback] = 'sans-serif'
 ; settings[foundation_zurb_font_selectors] = 'body'
+; settings[slideshow_display]  = 1
+; settings[slide1_head]  = "Sample product"
+; settings[slide2_head]  = "Sample service"
+; settings[slide3_head]  = "Sample product and service"
+; settings[slide1_desc]  = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt..."
+; settings[slide2_desc]  = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do Lorem ipsum dolor sit amet..."
+; settings[slide3_desc]  = "Duis aute irure dolor in reprehenderit inLorem ipsum dolor sit amet, consectetur adipisicing..."
+; settings[slide1_url]  = "node/1"
+; settings[slide2_url]  = "node/2"
+; settings[slide3_url]  = "node/3"
