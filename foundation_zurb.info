@@ -33,11 +33,10 @@ regions[sidebar_second]  = Right Sidebar
 regions[footer_first]    = Footer first
 regions[footer_middle]   = Footer middle
 regions[footer_last]     = Footer last
-regions[footer]          = Page bottom
 
 ; Hidden regions
-regions[page_top] = Page top
-regions[page_bottom] = Page bottom
+regions_hidden[] = Page top
+regions_hidden[] = Page bottom
 
 ; Possible theme settings
 ; settings[foundation_zurb_copyright] = 1

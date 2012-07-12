@@ -1,4 +1,3 @@
-
 /* Some sane Drupal base styles */
 
 #site-name {
@@ -29,10 +28,6 @@
 	background: -webkit-gradient(linear, left top, left bottom, from(#2e2e2e), to(#1a1a1a));
 	background: -webkit-linear-gradient(top, #2e2e2e, #1a1a1a);
 	background: linear-gradient(top, #2e2e2e, #1a1a1a);
-	}
-
-#mobile-header .button {
-  display: inline-block;
 }
 
 /* Base theme styling */
