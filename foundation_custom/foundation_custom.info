@@ -1,12 +1,15 @@
 name = Custom name of theme CHANGE THIS in the .info file
-description = Custom sub theme, inherits from the Foundation Zurb theme
+description = Custom sub theme, inherits from the Foundation base theme
 screenshot = images/screenshot.png
 core = 7.x
 engine = phptemplate
 base theme = foundation_zurb
 
+; Remove the styling from the base theme
+stylesheets[all][] = css/drupal.css
+
 ; An empty CSS file ready to be used
-stylesheets[all][] = styles/custom.css
+stylesheets[all][] = css/custom.css
 
 ; An empty JS file ready to be used
 scripts[] = js/scripts.js

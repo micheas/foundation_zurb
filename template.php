@@ -18,10 +18,10 @@ function foundation_zurb_preprocess_html(&$variables) {
   }
 
   // Custom fonts from Google web-fonts
-  $font = str_replace(' ', '+', theme_get_setting('zurb_foundation_font'));
-  if (theme_get_setting('zurb_foundation_font')) {
-    drupal_add_css('http://fonts.googleapis.com/css?family=' . $font , array('type' => 'external', 'group' => CSS_THEME));
-  }
+//  $font = str_replace(' ', '+', theme_get_setting('zurb_foundation_font'));
+//  if (theme_get_setting('zurb_foundation_font')) {
+//    drupal_add_css('http://fonts.googleapis.com/css?family=' . $font , array('type' => 'external', 'group' => CSS_THEME));
+//  }
 
   // Classes for body element. Allows advanced theming based on context
   if (!$variables['is_front']) {
@@ -142,7 +142,7 @@ function foundation_zurb_preprocess_page(&$variables) {
       'links' => $variables['main_menu'],
       'attributes' => array(
         'id' => 'main-menu',
-        'class' => array('menu'),
+        'class' => array('nav-bar'),
       ),
       'heading' => array(
         'text' => t('Main menu'),
@@ -157,7 +157,7 @@ function foundation_zurb_preprocess_page(&$variables) {
       'links' => $variables['secondary_menu'],
       'attributes' => array(
         'id'    => 'secondary-menu',
-        'class' => array('secondary', 'menu'),
+        'class' => array('secondary', 'nav-bar'),
       ),
       'heading' => array(
         'text' => t('Secondary menu'),
@@ -173,17 +173,21 @@ function foundation_zurb_preprocess_page(&$variables) {
 
   // Dynamic sidebars
   if (!empty($left) && !empty($right)) {
-    $variables['main_grid'] = 'six';
-    $variables['sidebar_first_grid'] = 'three';
+    $variables['main_grid'] = 'six push-three';
+    $variables['sidebar_first_grid'] = 'three pull-six';
+    $variables['sidebar_sec_grid'] = 'three';
   } elseif (empty($left) && !empty($right)) {
     $variables['main_grid'] = 'nine';
     $variables['sidebar_first_grid'] = '';
+    $variables['sidebar_sec_grid'] = 'three';
   } elseif (!empty($left) && empty($right)) {
-    $variables['main_grid'] = 'nine';
-    $variables['sidebar_first_grid'] = 'three';
+    $variables['main_grid'] = 'nine push-three';
+    $variables['sidebar_first_grid'] = 'three pull-nine';
+    $variables['sidebar_sec_grid'] = '';
   } else {
     $variables['main_grid'] = 'twelve';
     $variables['sidebar_first_grid'] = '';
+    $variables['sidebar_sec_grid'] = '';
   }
 
 }
@@ -199,7 +203,6 @@ function foundation_zurb_preprocess_node(&$variables) {
   if (!$variables['teaser']) {
     $variables['classes_array'][] = 'view-mode-' . $variables['view_mode'];
   }
-
   $variables['title_attributes_array']['class'][] = 'node-title';
 }
 
@@ -302,37 +305,14 @@ function foundation_zurb_preprocess_field(&$variables) {
 }
 
 /**
- * Generate the HTML output for a menu link and submenu.
- *
- * @param $vars
- *   An associative array containing:
- *   - element: Structured array data for a menu link.
- *
- * @return
- *   A themed HTML string.
- *
- * @ingroup themeable
+ * Implements theme_menu_link()
  */
-function foundation_zurb_menu_link(array $vars) {
-  $element = $vars['element'];
-  $sub_menu = '';
-
-  if ($element['#below']) {
-    $sub_menu = drupal_render($element['#below']);
-  }
-
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-  // Adding a class depending on the TITLE of the link (not constant)
-  $element['#attributes']['class'][] = drupal_html_id($element['#title']);
-  // Adding a class depending on the ID of the link (constant)
-  if (isset($element['#original_link']['mlid']) && !empty($element['#original_link']['mlid'])) {
-    $element['#attributes']['class'][] = 'mid-' . $element['#original_link']['mlid'];
-  }
-  return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>\n";
+function foundation_zurb_menu_link(array &$variables) {
+  $variables['element']['#attributes']['class'][] = 'nav-item';
+  return theme_menu_link($variables);
 }
-
 /**
- * Output custom Breadcrumb
+ * Implements template_breadcrumb().
  */
 function foundation_zurb_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
@@ -351,7 +331,6 @@ function foundation_zurb_breadcrumb($variables) {
 /**
  * Implements hook_preprocess_block()
  */
- 
 function foundation_zurb_preprocess_block(&$vars) {
 //  $block_id = $vars['block']->module . '-' . $vars['block']->delta;
 //  $classes = &$vars['classes_array'];
@@ -379,14 +358,25 @@ function foundation_zurb_preprocess_block(&$vars) {
 //  }
 }
 
-function foundation_zurb_form_alter(&$form, &$form_state, $form_id) {
-//  if ($form_id == 'search_form') {
-//    $form['basic']['keys']['#title'] = '';
-//    $form['basic']['keys']['#size'] = '25';
-//  $form['basic']['keys']['#default_value'] = 'Type to search';
-//  }
+/**
+ * Implements theme_form_element_label()
+ */
+function foundation_zurb_form_element_label($vars) {
+  if (!empty($vars['element']['#title'])) {
+    $vars['element']['#title'] = '<span class="secondary label">' . $vars['element']['#title'] . '</span>';
+  }
+  if (!empty($vars['element']['#description'])) {
+    $vars['element']['#description'] = ' <span class="has-tip tip-top radius" data-width="250" title="' . $vars['element']['#description'] . '">' . t('More information?') . '</span>';
+  }
+  return theme_form_element_label($vars);
 }
 
+function foundation_zurb_form_alter(&$form, &$form_state, $form_id) {
+  // Sexy submit buttons
+  if ($form['actions']['submit']) {
+    $form['actions']['submit']['#attributes'] = array('class' => array('secondary', 'button', 'radius'));
+  }
+}
 
 /**
  * Implements theme_field__field_type().
@@ -410,4 +400,49 @@ function foundation_zurb_field__taxonomy_term_reference($variables) {
   $output = '<div class="' . $variables['classes'] . (!in_array('clearfix', $variables['classes_array']) ? ' clearfix' : '') . '">' . $output . '</div>';
 
   return $output;
+}
+
+/**
+ * Implements theme_menu_local_tasks().
+ */
+function foundation_zurb_menu_local_tasks(&$variables) {
+  $output = '';
+
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<dl class="tabs">';
+    $variables['primary']['#suffix'] = '</dl>';
+    $output .= drupal_render($variables['primary']);
+  }
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<dl class="tabs pill">';
+    $variables['secondary']['#suffix'] = '</dl>';
+    $output .= drupal_render($variables['secondary']);
+  }
+
+  return $output;
+}
+
+/**
+ * Implements theme_menu_local_task().
+ */
+function foundation_zurb_menu_local_task(&$variables) {
+  $link = $variables['element']['#link'];
+  $link_text = $link['title'];
+
+  if (!empty($variables['element']['#active'])) {
+    // Add text to indicate active tab for non-visual users.
+    $active = '<span class="element-invisible">' . t('(active tab)') . '</span>';
+
+    // If the link does not contain HTML already, check_plain() it now.
+    // After we set 'html'=TRUE the link will not be sanitized by l().
+    if (empty($link['localized_options']['html'])) {
+      $link['title'] = check_plain($link['title']);
+    }
+    $link['localized_options']['html'] = TRUE;
+    $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
+  }
+
+  return '<dd' . (!empty($variables['element']['#active']) ? ' class="active"' : '') . '>' . l($link_text, $link['href'], $link['localized_options']) . "</dd>\n";
 }

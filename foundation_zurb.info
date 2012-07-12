@@ -1,4 +1,4 @@
-name = Zurb Foundation
+name = ZURB Foundation
 description = Drupal implemenation of the framework by <a href="http://ishmaelsanchez.com">Ishmael Sanchez</a>
 core = 7.x
 engine = phptemplate
@@ -9,7 +9,7 @@ screenshot = images/screenshot.png
 ; Foundation framework stylesheets
 stylesheets[all][] = css/framework/foundation.css 
 
-; Drupal overrides and site specific CSS
+; Base theme specific CSS
 stylesheets[all][] = css/drupal.css
 
 ; Default theme scripts.
@@ -23,8 +23,8 @@ scripts[] = js/app.js
 scripts[] = js/jquery.offcanvas.js
 
 ; Regions are output in the page.tpl.php
-regions[header] = Header
-regions[navigation] = Navigation
+regions[header]          = Header
+regions[navigation]      = Navigation
 regions[help]            = Help
 regions[highlighted]     = Highlighted
 regions[content]         = Content
@@ -40,20 +40,7 @@ regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 
 ; Possible theme settings
-; settings[foundation_zurb_force_ie] = 1
-; settings[foundation_zurb_ie_comments] = 0
-; settings[foundation_zurb_prompt_cf] = 'IE 7'
-
-; settings[foundation_zurb_font] = ''
+; settings[foundation_zurb_copyright] = 1
+; settings[foundation_zurb_credit] = ''
 ; settings[foundation_zurb_font_fallback] = 'sans-serif'
 ; settings[foundation_zurb_font_selectors] = 'body'
-; settings[slideshow_display]  = 1
-; settings[slide1_head]  = "Sample product"
-; settings[slide2_head]  = "Sample service"
-; settings[slide3_head]  = "Sample product and service"
-; settings[slide1_desc]  = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt..."
-; settings[slide2_desc]  = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do Lorem ipsum dolor sit amet..."
-; settings[slide3_desc]  = "Duis aute irure dolor in reprehenderit inLorem ipsum dolor sit amet, consectetur adipisicing..."
-; settings[slide1_url]  = "node/1"
-; settings[slide2_url]  = "node/2"
-; settings[slide3_url]  = "node/3"

@@ -1,27 +1,15 @@
-/* This is for some sane Drupal base styles */
+
+/* Some sane Drupal base styles */
 
 #site-name {
-  display:inline-block;
-  font-size:2rem;
-  font-size:2em;
-  font-weight:normal;
-  line-height:1.25;
-  margin:0;
-}
-
-.hide-on-desktops #main-menu li {
-  display: block;
+  display: inline-block;
+  font-size: 2.5em;
+  font-weight: normal;
+  line-height: 1.25;
   margin: 0;
-  padding:0;
+  padding: 15px 0 0;
+  text-shadow: 1px 1px 1px #4D4D4D;
   text-transform: uppercase;
-}
-
-.hide-on-desktops #main-menu a {
-  background-color: #0192dd;
-  border-bottom: 1px solid #999;
-  display:block;
-  color:#fff;
-  padding:5px 15px;
 }
 
 /*Header*/
@@ -49,27 +37,26 @@
 
 /* Base theme styling */
 .top-bar, .skip-link {
-  background: none repeat scroll 0 0 #333;
+  background: none repeat scroll 0 0 #eee;
 }
 
 .top-bar {
-  border-bottom:1px solid #000;
+  border-bottom:1px solid #ddd;
+  margin-bottom: 15px;
 }
 
-.top-bar a {
+.menu a {
 	-moz-transition: background-color 0.2s linear 0s;
     font-family: "ProximaNovaBold","Helvetica Neue","Helvetica",Arial,sans-serif;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
 }
 
-#main-menu a {
-	border-left: 1px solid #555;
-}
-
 .bottom-bar {
-  background:no-repeat scroll center top #F5F5F5;
+  background:no-repeat scroll center top #eee;
   border-top: 1px solid #ddd;
   color: #555;
   padding: 15px 0;
 }
+
+/* Foundation overrides */
