@@ -305,13 +305,6 @@ function foundation_zurb_preprocess_field(&$variables) {
 }
 
 /**
- * Implements theme_menu_link()
- */
-function foundation_zurb_menu_link(array &$variables) {
-  $variables['element']['#attributes']['class'][] = 'nav-item';
-  return theme_menu_link($variables);
-}
-/**
  * Implements template_breadcrumb().
  */
 function foundation_zurb_breadcrumb($variables) {

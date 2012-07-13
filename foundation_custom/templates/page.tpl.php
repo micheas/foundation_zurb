@@ -14,34 +14,20 @@
         <?php endif; ?>
       </div>
     <?php endif; ?>
-      <?php if ($main_menu_links): ?>
-        <nav class="six columns">
-          <?php print $main_menu_links; ?>
-        </nav>
-      <?php endif; ?>
+    <?php if ($main_menu_links): ?>
+      <nav class="six columns">
+        <?php print $main_menu_links; ?>
+      </nav>
+    <?php endif; ?>
   </div>
 </div>
-<div class="row">
-  <div class="<?php $site_slogan ? print 'six' : print 'four columns offset-by-eight'; ?> columns hide-for-small">
-    <p>
-      <?php print l(t('Login'), 'user/login', array('attributes' => array('class' => array('large', 'radius', 'button')))); ?>
-      <?php print l(t('Sign Up'), 'user/register', array('attributes' => array('class' => array('large', 'radius', 'success', 'button')))); ?>
-    </p>  
-  </div>
-  <?php if ($site_slogan): ?>
-    <div class="six columns panel radius hide-for-small">
+<?php if ($site_slogan): ?>
+  <div class="row">
+    <div class="tweleve columns panel radius">
       <?php print $site_slogan; ?>
     </div>
-  <?php endif; ?>
-  <div class="show-for-small">
-    <div class="six mobile-two columns">
-      <p><?php print l(t('Login'), 'user/login', array('attributes' => array('class' => array('radius', 'button')))); ?></p>
-    </div>
-    <div class="six mobile-two columns">
-      <p><?php print l(t('Sign Up'), 'user/register', array('attributes' => array('class' => array('radius', 'success', 'button')))); ?></p>
-    </div>
   </div>
-</div>
+<?php endif; ?>
 <div class="row">
   <?php if ($messages): print $messages; endif; ?>
   <?php if (!empty($page['help'])): print render($page['help']); endif; ?>
@@ -70,12 +56,12 @@
     <?php print render($page['content']); ?>
   </div>
   <?php if (!empty($page['sidebar_first'])): ?>
-    <div id="sidebar-first" class="<?php print $sidebar_first_grid; ?> columns sidebar ">
+    <div id="sidebar-first" class="<?php print $sidebar_first_grid; ?> columns sidebar">
       <?php print render($page['sidebar_first']); ?>
     </div>
   <?php endif; ?>
   <?php if (!empty($page['sidebar_second'])): ?>
-    <div id="sidebar-second" class="<?php print $sidebar_sec_grid;?> columns sidebar">
+    <div id="sidebar-second" class="<?php print $sidebar_sec_grid; ?> columns sidebar">
       <?php print render($page['sidebar_second']); ?>
     </div>
   <?php endif; ?>
@@ -102,7 +88,7 @@
 <div class="bottom-bar">
   <div class="row">
     <div class="tweleve columns">
-      &copy; <?php print date('Y') . ' ' . check_plain($site_name) . ' ' . t('All rights reserved.'); ?>
+      &copy; <?php print date('Y') . ' ' . check_plain($site_name); ?>
     </div>
   </div>
 </div>

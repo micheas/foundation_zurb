@@ -1,0 +1,9 @@
+/* Standardize Sitename styling */
+#site-name {
+  display: inline-block;
+  font-size: 2.5em;
+  font-weight: normal;
+  line-height: 1.25;
+  margin: 0;
+  padding: 15px 0 0;
+}

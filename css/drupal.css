@@ -54,4 +54,8 @@
   padding: 15px 0;
 }
 
+/* Drupal overrides */
+js .block-search .form-autocomplete {
+    background: none;
+}
 /* Foundation overrides */
