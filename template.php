@@ -95,7 +95,6 @@ function foundation_zurb_html_head_alter(&$head_elements) {
       'content' => 'false',
     ),
   );
-
 }
 
 function foundation_zurb_preprocess_page(&$variables) {
@@ -366,7 +365,7 @@ function foundation_zurb_form_element_label($vars) {
 
 function foundation_zurb_form_alter(&$form, &$form_state, $form_id) {
   // Sexy submit buttons
-  if ($form['actions']['submit']) {
+  if (!empty($form['actions']) && $form['actions']['submit']) {
     $form['actions']['submit']['#attributes'] = array('class' => array('secondary', 'button', 'radius'));
   }
 }
