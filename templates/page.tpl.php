@@ -7,6 +7,7 @@
         <?php endif; ?>
       </div>
       <div class="four columns">
+        
         <?php if ($is_front): ?>
           <h1 id="site-name"><?php print $linked_site_name; ?></h1>
         <?php else: ?>
@@ -24,8 +25,13 @@
 <div class="row">
   <div class="<?php $site_slogan ? print 'six' : print 'four columns offset-by-eight'; ?> columns hide-for-small">
     <p>
-      <?php print l(t('Login'), 'user/login', array('attributes' => array('class' => array('large', 'radius', 'button')))); ?>
-      <?php print l(t('Sign Up'), 'user/register', array('attributes' => array('class' => array('large', 'radius', 'success', 'button')))); ?>
+      <?php if ($logged_in): ?>
+        <?php print l(t('My Account'), 'user'); ?>
+        <?php print l(t('Logout'), 'user/logout'); ?>
+      <?php else: ?>
+        <?php print l(t('Login'), 'user/login', array('attributes' => array('class' => array('large', 'radius', 'button')))); ?>
+        <?php print l(t('Sign Up'), 'user/register', array('attributes' => array('class' => array('large', 'radius', 'success', 'button')))); ?>
+      <?php endif;  ?>
     </p>  
   </div>
   <?php if ($site_slogan): ?>
